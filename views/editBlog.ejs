@@ -1,0 +1,12 @@
+<%- include ("./partials/header.ejs") %> 
+<%- include ("./partials/navbar.ejs") %> 
+  <div class="container mt-5">
+    <h3 class="my-3">Modifier vos objet ici 🙂 </h3>
+    <form action="/edit/<%= blog.id %> " method="post" >
+      <input type="text" value="<%= blog.title %> " name="title" placeholder="Donner le titre de l'objet...." class="form-control" required >
+      <textarea required name="content" class="form-control mt-2" placeholder="Donner la description de l'objet...." cols="30" rows="10"><%= blog.content %> </textarea>
+      <input type="submit" value="Modifier" class="mt-2 btn btn-md btn-danger">
+    </form>
+  </div>
+
+<%- include ("./partials/footer.ejs") %> 

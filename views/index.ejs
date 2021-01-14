@@ -1,0 +1,23 @@
+<%- include ("./partials/header.ejs") %> 
+<%- include ("./partials/navbar.ejs") %> 
+  <div class="container mt-4">
+    <h2>All Blogs </h2>
+
+    <% blogs.reverse() %> 
+
+    <% blogs.forEach(blog => { %>
+      <div class="card mt-3">
+        <div class="card-body">
+          <p class="text-muted">Publier le : <%= blog.postedAt %> </p>
+          <h5 class="card-title"><%= blog.title %> </h5>
+          <p class="card-text"><%= blog.content.slice(0,115) %> ... <a href="/blog/<%= blog.id %>">plus</a> </p>
+          <a href="/blog/<%= blog.id %> " class="btn btn-primary">Plus de details ...</a>
+          <a href="/edit/<%= blog.id %> " class="btn btn-warning">Modifier</a>
+          <a href="/delete/<%= blog.id %> " class="btn btn-danger">Supprimer</a>
+        </div>
+      </div>
+    <% }) %>
+    
+  </div>
+<%- include ("./partials/footer.ejs") %> 
+
